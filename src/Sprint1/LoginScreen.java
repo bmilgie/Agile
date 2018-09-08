@@ -34,6 +34,9 @@ public class LoginScreen {
        password.setPreferredSize(new Dimension(100,50));
        
        //textfield = username set username
+       // i will be working on the sign up gui
+       //Angel 
+       //3455453536356363563
        
        mainPanel.add(username);
        mainPanel.add(password);
