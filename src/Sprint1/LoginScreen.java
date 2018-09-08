@@ -64,7 +64,7 @@ public class LoginScreen {
    public String getUsername() {
 	   return ""; //username
    }
-   
+   //this is testing the git commit
 //   public void setUsername(Username user) {
 //	   return this.user; //username
 //   }
