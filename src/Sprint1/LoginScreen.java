@@ -8,6 +8,12 @@ import java.awt.event.*;
 */
 import javax.swing.*;        
 
+/**
+ * This class creates and shows the login screen
+ * 
+ * @author Team 7
+ *
+ */
 public class LoginScreen {
 
 
@@ -16,6 +22,7 @@ public class LoginScreen {
    private static JLabel usernameLabel = new JLabel();
    private static JLabel passwordLabel = new JLabel();
    private static JPanel mainPanel = new JPanel();
+   
    /**
     * Create the GUI and show it.  For thread safety,
     * this method should be invoked from the
@@ -32,12 +39,6 @@ public class LoginScreen {
        username.setPreferredSize(new Dimension(100,50));
        password.setPreferredSize(new Dimension(100,50));
        password.setPreferredSize(new Dimension(100,50));
-       
-       //textfield = username set username
-       // i will be working on the sign up gui
-       //Angel 
-       //3455453536356363563
-       
        mainPanel.add(username);
        mainPanel.add(password);
        mainPanel.add(submit);
@@ -64,7 +65,10 @@ public class LoginScreen {
        frame.setVisible(true);
    }
    
-   public String getUsername() {
+   /**
+ * @returns the username of the user
+ */
+public String getUsername() {
 	   return ""; //username
    }
    //this is testing the git commit
@@ -72,7 +76,12 @@ public class LoginScreen {
 //	   return this.user; //username
 //   }
 
-   public static void main(String[] args) {
+   /**
+    * This method will run the GUI
+    * 
+ * @param args
+ */
+public static void main(String[] args) {
        //Schedule a job for the event-dispatching thread:
        //creating and showing this application's GUI.
        javax.swing.SwingUtilities.invokeLater(new Runnable() 

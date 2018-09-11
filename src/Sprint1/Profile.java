@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * 
+ * This class creates the panel for the User
  * 
  * @author Team 7
  *
@@ -20,7 +20,7 @@ public class Profile extends JPanel
 	
 	
 	/**
-	 * 
+	 * This method holds the user's name and will be seen on the default window
 	 * 
 	 * @param mainPanel
 	 */
@@ -34,7 +34,8 @@ public class Profile extends JPanel
 	}
 	
 	/**
-	 * 
+	 * This class deals with the ActionListener when the user wants to logout 
+	 * of their account.
 	 * 
 	 * @author Team 7
 	 *

@@ -10,6 +10,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
+ * This class holds all of the information of the user
+ * 
  * @author Team 7
  *
  */
@@ -19,7 +21,7 @@ public class Users
 	private static LinkedList<User> allUsers = new LinkedList();
 	
 	/**
-	 * 
+	 * This method try's to find the user by checking the information provided
 	 */
 	public Users() 
 	{
@@ -44,7 +46,7 @@ public class Users
 	}
 	
 	/**
-	 * 
+	 * This method creates the user with the information given.
 	 * 
 	 * @param username
 	 * @param password
@@ -58,6 +60,8 @@ public class Users
 	}
 	
 	/**
+	 * This method creates the password that was given.
+	 * 
 	 * @returns the user's generated password
 	 */
 	public String generatePassword() 
@@ -78,6 +82,8 @@ public class Users
 	}
 	
 	/**
+	 * This method resets the user's password.
+	 * 
 	 * @param username
 	 * @param email
 	 * @returns the newly created password for the user.
@@ -118,7 +124,7 @@ public class Users
 	}
 	
 	/**
-	 * 
+	 * This method saves the User's username and password
 	 */
 	public void saveUserData() 
 	{
@@ -150,9 +156,11 @@ public class Users
 	}
 	
 	/**
+	 * This method checks if the user has given a valid username and password
+	 * 
 	 * @param user
 	 * @param pass
-	 * @returns the user's username and password if the values are valid
+	 * @returns the user's username and password.
 	 */
 	public boolean validateCredentials(String user, String pass) 
 	{

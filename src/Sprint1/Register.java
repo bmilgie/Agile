@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
+ * This class holds all the information of the user 
+ * when they want to register a new account.
+ * 
  * @author Team 7 
  *
  */
@@ -34,7 +37,7 @@ public class Register extends JPanel
 	
 
 	/**
-	 * 
+	 * This method creates all of the aspects of the register window.
 	 * 
 	 * @param mainPanel
 	 */
@@ -102,7 +105,8 @@ public class Register extends JPanel
 	}
 	
     /**
-     * 
+     * This class deals with the register button's logic when the user wants to submit 
+     * their username, password and be able to create an account.
      * 
      * @author Team 7
      *
@@ -133,7 +137,7 @@ public class Register extends JPanel
     }
     
     /**
-     * 
+     * This class deals with the action when the back button is clicked.
      * 
      * @author Team 7
      *
