@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
 /**
  * This class is the logic behind what you see on the user window when 
@@ -27,7 +28,7 @@ import javax.swing.JTextField;
 public class Login extends JPanel 
 {
 	private static JTextField username = new JTextField();
-    private static JTextField password = new JTextField();
+    private static JTextField password = new JPasswordField();
     private static JPanel thisPanel = new JPanel();
     private static JButton submit = new JButton("Login");
     private static JButton register = new JButton("Register");
