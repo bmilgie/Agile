@@ -24,22 +24,19 @@ import javax.swing.JTextField;
  */
 public class Login extends JPanel 
 {
-	private static JTextField username = new JTextField();
-    private static JTextField password = new JTextField();
-    private static JPanel thisPanel = new JPanel();
-    private static JButton submit = new JButton("Login");
-    private static JButton register = new JButton("Register");
-    private static JButton reset = new JButton("Reset Password");
-	private static JLabel passwordLabel = new JLabel("Password");
-	private static JLabel usernameLabel = new JLabel("Username");
-	private static JLabel errorLabel = new JLabel("");
-    private static JLabel headerLabel = new JLabel("Login");
-<<<<<<< HEAD
+	public static JTextField username = new JTextField();
+    public static JTextField password = new JTextField();
+    protected static JPanel thisPanel = new JPanel();
+    public static JButton submit = new JButton("Login");
+    protected static JButton register = new JButton("Register");
+    protected static JButton reset = new JButton("Reset Password");
+	protected static JLabel passwordLabel = new JLabel("Password");
+	protected static JLabel usernameLabel = new JLabel("Username");
+	protected static JLabel errorLabel = new JLabel("");
+    protected static JLabel headerLabel = new JLabel("Login");
     
     protected static MainPanel main;
-=======
-    private static MainPanel main;
->>>>>>> b8945faa22e8d8b2cc67c71c836b42e854eefc23
+
     
     /**
      * This method creates all of the aesthetics of the login window.

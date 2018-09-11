@@ -22,7 +22,7 @@ public class TestSignUp {
 	}
 	
 	@After
-	public void tearDown() throws Exception
+	public void done() throws Exception
 	{
 		
 	}
@@ -35,7 +35,7 @@ public class TestSignUp {
 		frame.setSize(new Dimension(800,800));
 		frame.setVisible(true);
 		try {
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
