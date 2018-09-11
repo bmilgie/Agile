@@ -175,4 +175,20 @@ public class Users
 		}
 		return false;
 	}
+	
+	/**
+	 * This method checks if the username is already present in the system
+	 * 
+	 * @param user
+	 * @returns the boolean value depending on if the username already exists in the system
+	 */
+	public boolean checkDuplicateUser(String user) {
+		for(int i=0; i < this.allUsers.size(); i++) {
+			User u = this.allUsers.get(i);
+			if(u.getUserName().equalsIgnoreCase(user)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
