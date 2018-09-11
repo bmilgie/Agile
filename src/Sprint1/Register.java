@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
 /**
  * This class holds the data structure of the user information.
@@ -22,8 +23,8 @@ public class Register extends JPanel
 	private static MainPanel main;
 	private static JButton backButton = new JButton("Back");
 	private static JTextField userNameText = new JTextField();
-	private static JTextField password1Text = new JTextField();
-	private static JTextField password2Text = new JTextField();
+	private static JTextField password1Text = new JPasswordField();
+	private static JTextField password2Text = new JPasswordField();
 	private static JTextField emailText = new JTextField();
 	private static JButton submitButton = new JButton("Create Account");
 	
