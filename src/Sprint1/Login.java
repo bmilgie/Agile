@@ -37,7 +37,7 @@ public class Login extends JPanel
     
     private static JLabel headerLabel = new JLabel("Login");
     
-    private static MainPanel main;
+    protected static MainPanel main;
     
     /**
      * 
