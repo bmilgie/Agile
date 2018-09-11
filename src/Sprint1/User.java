@@ -1,7 +1,7 @@
 package Sprint1;
 
 /**
- * 
+ * This class creates the getter methods and one setter method of getting the user's information.
  * 
  * @author Team 7
  *
@@ -14,7 +14,7 @@ public class User
 	private String email;
 	
 	/**
-	 * 
+	 * This method creates the user
 	 * 
 	 * @param username
 	 * @param password
@@ -28,6 +28,7 @@ public class User
 	}
 
 	/**
+	 * This method gets the user's name
 	 * 
 	 * @returns the user's username
 	 */
@@ -37,6 +38,8 @@ public class User
 	}
 	
 	/**
+	 * This method gets the user's password
+	 * 
 	 * @returns the user's password
 	 */
 	public String getPassWord() 
@@ -45,6 +48,8 @@ public class User
 	}
 	
 	/**
+	 * This method gets the user's email
+	 * 
 	 * @returns the user's email
 	 */
 	public String getEmail() 

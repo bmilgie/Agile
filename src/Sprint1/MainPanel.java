@@ -3,7 +3,9 @@ package Sprint1;
 import javax.swing.JPanel;
 
 /**
- * This class creates the main panel of the project
+ * This class creates the main JPanel for the project.
+ * This is the logic behind what you see on the login page,
+ * register page, and reset password page.
  * 
  * @author Team 7
  *
@@ -20,6 +22,7 @@ public class MainPanel extends JPanel
 	
 	/**
 	 * This method creates the main panel.
+	 * Unused at the moment 
 	 */
 	public MainPanel() 
 	{
@@ -28,7 +31,7 @@ public class MainPanel extends JPanel
 	}
 	
 	/**
-	 * This method constructs 
+	 * This method constructs the login, reset password, and register panels.
 	 * 
 	 * @param loginPanel
 	 * @param resetPanel
@@ -59,11 +62,11 @@ public class MainPanel extends JPanel
 	}
 	
 	/**
-	 * 
+	 * This method checks if the information provided by the user is valid
 	 * 
 	 * @param user
 	 * @param pass
-	 * @return
+	 * @returns valid username and password
 	 */
 	public boolean validateCredentials(String user, String pass) 
 	{
@@ -71,9 +74,11 @@ public class MainPanel extends JPanel
 	}
 	
 	/**
+	 * This method returns a new password that user has created
+	 * 
 	 * @param username
 	 * @param email
-	 * @return
+	 * @returns new password
 	 */
 	public String resetPassword(String username, String email)
 	{
@@ -82,7 +87,8 @@ public class MainPanel extends JPanel
 	}
 	
 	/**
-	 * 
+	 * This method resets certain aspects of the window when 
+	 * a certain button is clicked and changes into a new window. 
 	 * 
 	 * @param event
 	 */

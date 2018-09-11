@@ -15,7 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * 
+ * This class is the logic behind what you see on the user window when 
+ * you are trying to login. This class creates the username and password 
+ * text field, the login, register, and reset password buttons.  
  * 
  * @author Team 7
  *
@@ -31,16 +33,17 @@ public class Login extends JPanel
 	private static JLabel passwordLabel = new JLabel("Password");
 	private static JLabel usernameLabel = new JLabel("Username");
 	private static JLabel errorLabel = new JLabel("");
-
-    
-    
-    
     private static JLabel headerLabel = new JLabel("Login");
+<<<<<<< HEAD
     
     protected static MainPanel main;
+=======
+    private static MainPanel main;
+>>>>>>> b8945faa22e8d8b2cc67c71c836b42e854eefc23
     
     /**
-     * 
+     * This method creates all of the aesthetics of the login window.
+     * This is the logic behind what you see on the login window.
      * 
      * @param mainPanel
      */
@@ -93,8 +96,10 @@ public class Login extends JPanel
    
         this.add(thisPanel);
     }
+    
     /**
-     * 
+     * This action listener class is used when the reset button is clicked 
+     * and changes to the reset password window.
      * 
      * @author Team 7
      *
@@ -109,7 +114,8 @@ public class Login extends JPanel
     }
     
     /**
-     * 
+     * This action listener class is used when the register button is clicked 
+     * and changes to the register window.
      * 
      * @author Team 7
      *
@@ -124,7 +130,8 @@ public class Login extends JPanel
     }
     
     /**
-     * 
+     * This class implements the methods when a mouse clicks on a
+     * button on the login, register, or reset password window 
      * 
      * @author Team 7
      *
@@ -133,7 +140,7 @@ public class Login extends JPanel
     {
     	
     	/**
-    	 * 
+    	 * Unused action performed method
     	 * 
     	 * @param e
     	 */
@@ -181,7 +188,9 @@ public class Login extends JPanel
     }
     
     /**
-     * 
+     * This class creates the ActionListner when the user wants to
+     * successfully login, successfully create an account, or successfully
+     * reset your password.
      * 
      * @author Team 7
      *
