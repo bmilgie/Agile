@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * This class holds the data structure of the user information.
+ * This class holds the logic for the registration.
  * 
  * @author Team 7 
  *
