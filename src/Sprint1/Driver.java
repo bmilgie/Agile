@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;        
 
 /**
- * This class creates the window where the user can login, register or reset password
+ * This class creates the frame where the user can login, register or reset password
  * 
  * @author Team 7
  *
@@ -19,7 +19,7 @@ public class Driver
     private static void createAndShowGUI() 
     {
         MainPanel mainPanel = new MainPanel();
-    	JFrame frame = new JFrame("Bdogs Project");
+    	JFrame frame = new JFrame("Team 7 Project");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(mainPanel);
         frame.setPreferredSize(new Dimension(700,300));

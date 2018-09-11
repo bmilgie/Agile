@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * This class creates the panel for the User
+ * This class creates the profile page
  * 
  * @author Team 7
  *
@@ -20,7 +20,7 @@ public class Profile extends JPanel
 	
 	
 	/**
-	 * This method holds the user's name and will be seen on the default window
+	 * This constructor announces you are on the profile page
 	 * 
 	 * @param mainPanel
 	 */
@@ -28,7 +28,7 @@ public class Profile extends JPanel
 	{
 		this.main = mainPanel;
 		this.logoutButton.addActionListener(new LogoutListener());
-		this.add(new JLabel("PRofile panel"));
+		this.add(new JLabel("Profile panel"));
 		this.add(this.logoutButton);
 		
 	}

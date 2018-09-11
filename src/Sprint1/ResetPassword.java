@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * This class creates all of the logic behind the reset password window
+ * This class creates all of the logic behind the reset password panel
  * 
  * @author Team 7
  *
@@ -33,7 +33,7 @@ public class ResetPassword extends JPanel
 	private static JLabel passwordLabel = new JLabel("");
 
 	/**
-	 * Creates the Reset password window
+	 * This is a constructor for the reset password panel
 	 * 
 	 * @param mainPanel
 	 */
@@ -90,9 +90,7 @@ public class ResetPassword extends JPanel
 	
 	
     /**
-     * This class deals with the reset button's logic when the user wants to submit 
-     * their new password for their account.
-     * 
+     * This class deals with the reset button's logic when the user needs a new password.
      * @author Team 7
      *
      */

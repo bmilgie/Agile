@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * This class holds all of the information of the user
+ * This class holds the data structures for all users
  * 
  * @author Team 7
  *
@@ -21,7 +21,8 @@ public class Users
 	private static LinkedList<User> allUsers = new LinkedList();
 	
 	/**
-	 * This method try's to find the user by checking the information provided
+	 * This constructor parses the file into username, email, and password.Then it
+	 * is added into the text file.
 	 */
 	public Users() 
 	{
@@ -60,7 +61,7 @@ public class Users
 	}
 	
 	/**
-	 * This method creates the password that was given.
+	 * This method creates a new password.
 	 * 
 	 * @returns the user's generated password
 	 */
@@ -82,7 +83,7 @@ public class Users
 	}
 	
 	/**
-	 * This method resets the user's password.
+	 * This method resets the user's password if the username and email is valid.
 	 * 
 	 * @param username
 	 * @param email

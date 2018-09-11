@@ -1,7 +1,7 @@
 package Sprint1;
 
 /**
- * This class creates the getter methods and one setter method of getting the user's information.
+ * This class is user information 
  * 
  * @author Team 7
  *

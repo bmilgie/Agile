@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,27 +18,25 @@ import javax.swing.JTextField;
 
 /**
  * This class is the logic behind what you see on the user window when 
- * you are trying to login. This class creates the username and password 
- * text field, the login, register, and reset password buttons.  
+ * you are trying to login. This class validates if the username and password are
+ * in the data structure.   
  * 
  * @author Team 7
  *
  */
 public class Login extends JPanel 
 {
-	public static JTextField username = new JTextField();
-    public static JTextField password = new JTextField();
-    protected static JPanel thisPanel = new JPanel();
-    public static JButton submit = new JButton("Login");
-    protected static JButton register = new JButton("Register");
-    protected static JButton reset = new JButton("Reset Password");
-	protected static JLabel passwordLabel = new JLabel("Password");
-	protected static JLabel usernameLabel = new JLabel("Username");
-	protected static JLabel errorLabel = new JLabel("");
-    protected static JLabel headerLabel = new JLabel("Login");
-    
-    protected static MainPanel main;
-
+	private static JTextField username = new JTextField();
+    private static JTextField password = new JTextField();
+    private static JPanel thisPanel = new JPanel();
+    private static JButton submit = new JButton("Login");
+    private static JButton register = new JButton("Register");
+    private static JButton reset = new JButton("Reset Password");
+	private static JLabel passwordLabel = new JLabel("Password");
+	private static JLabel usernameLabel = new JLabel("Username");
+	private static JLabel errorLabel = new JLabel("");
+    private static JLabel headerLabel = new JLabel("Login");
+    private static MainPanel main;
     
     /**
      * This method creates all of the aesthetics of the login window.
@@ -85,7 +85,7 @@ public class Login extends JPanel
 		SubmitListener submitListener  = new SubmitListener();
         ResetListener resetListener  = new ResetListener();
         RegisterListener registerListener  = new RegisterListener();
-        errorLabel.addMouseListener(clearErrorListener);
+        errorLabel.addMouseMotionListener(clearErrorListener);
         submit.addActionListener(submitListener);
         reset.addActionListener(resetListener);
         register.addActionListener(registerListener);
@@ -133,52 +133,18 @@ public class Login extends JPanel
      * @author Team 7
      *
      */
-    private class ClearErrorListener implements MouseListener
+    private class ClearErrorListener implements  MouseMotionListener
     {
     	
-    	/**
-    	 * Unused action performed method
-    	 * 
-    	 * @param e
-    	 */
-    	public void actionPerformed(ActionEvent e) 
-    	{
-    		
-    	}
 
-		/* (non-Javadoc)
-		 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
-		 */
-		public void mouseClicked(MouseEvent arg0) 
-		{
+		@Override
+		public void mouseDragged(MouseEvent arg0) {
+			
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent arg0) {
 			errorLabel.setText("");
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent arg0) 
-		{
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent arg0) 
-		{
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) 
-		{
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) 
-		{
-			// TODO Auto-generated method stub
 			
 		}
 
@@ -186,8 +152,7 @@ public class Login extends JPanel
     
     /**
      * This class creates the ActionListner when the user wants to
-     * successfully login, successfully create an account, or successfully
-     * reset your password.
+     * successfully logging in.
      * 
      * @author Team 7
      *
