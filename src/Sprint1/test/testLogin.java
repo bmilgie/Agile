@@ -44,7 +44,8 @@ public class testLogin {
 	{
 		loginPanel.username.setText("John");
 		loginPanel.password.setText("John");
-		loginPanel.submit.setEnabled(true);
+		loginPanel.submit.doClick();
+		
 	}
 
 }
