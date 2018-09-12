@@ -1,30 +1,25 @@
-package Sprint1;
+package src.Login;
 
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 
-/**
- * This class holds the logic for the registration.
- * 
- * @author Team 7 
- *
- */
-public class Register extends JPanel 
-{
+
+public class Register extends JPanel {
 	
 	private static MainPanel main;
 	private static JButton backButton = new JButton("Back");
 	private static JTextField userNameText = new JTextField();
-	private static JTextField password1Text = new JPasswordField();
-	private static JTextField password2Text = new JPasswordField();
+	private static JTextField password1Text = new JTextField();
+	private static JTextField password2Text = new JTextField();
+	private static JTextField sqText = new JTextField();
 	private static JTextField emailText = new JTextField();
 	private static JButton submitButton = new JButton("Create Account");
 	
@@ -32,17 +27,12 @@ public class Register extends JPanel
 	private static JLabel userNameLabel = new JLabel("User Name");
 	private static JLabel password1Label = new JLabel("Password");
 	private static JLabel password2Label = new JLabel("Confirm Password");
+	private static JLabel sqLabel = new JLabel("Animal's name");
 	private static JLabel emailLabel = new JLabel("Email Address");
 	private static JLabel headerLabel = new JLabel("Create An Account");
 	
 
-	/**
-	 * This method creates all of the aspects of the register panel.
-	 * 
-	 * @param mainPanel
-	 */
-	public Register(MainPanel mainPanel) 
-	{
+	public Register(MainPanel mainPanel) {
 		this.main = mainPanel;
 		this.add(headerLabel);
 		this.headerLabel.setPreferredSize(new Dimension(700,40));
@@ -51,8 +41,6 @@ public class Register extends JPanel
 		
 		BoxLayout box = new BoxLayout(this, BoxLayout.Y_AXIS);
 		this.setLayout(box);
-		
-		
 		
 		JPanel emailRow = new JPanel();
 		emailRow.add(emailLabel);
@@ -77,6 +65,11 @@ public class Register extends JPanel
 		passWord2Row.add(password2Text);
 		this.add(passWord2Row);
 		
+		JPanel sqRow = new JPanel();
+		sqRow.add(sqLabel);
+		sqRow.add(sqText);
+		this.add(sqRow);
+		
 		JPanel buttonRow = new JPanel();
 		buttonRow.add(submitButton);
 		buttonRow.add(backButton);
@@ -86,13 +79,14 @@ public class Register extends JPanel
 		this.password1Text.setPreferredSize(new Dimension(150,25));
 		this.password2Text.setPreferredSize(new Dimension(150,25));
 		this.emailText.setPreferredSize(new Dimension(150,25));
-		
+		this.sqText.setPreferredSize(new Dimension(150,25));
 		
 		this.userNameLabel.setPreferredSize(new Dimension(150,25));
 		this.password1Label.setPreferredSize(new Dimension(150,25));
 		this.password2Label.setPreferredSize(new Dimension(150,25));
 		this.emailLabel.setPreferredSize(new Dimension(150,25));
-		
+		this.sqLabel.setPreferredSize(new Dimension(150,25));
+
 		
 		
 		
@@ -104,105 +98,29 @@ public class Register extends JPanel
 		
 	}
 	
-    /**
-     * This class deals with the register button's logic when the user wants to submit 
-     * their username, password, and email to be able to create an account.
-     * 
-     * @author Team 7
-     *
-     */
     private class SubmitButtonListener implements ActionListener{
     	public void actionPerformed(ActionEvent e) {
+    		String username = userNameText.getText();
+    		String password = password1Text.getText();
+    		String email = emailText.getText();
+    		String sq = sqText.getText();
     		JButton continueButton = new JButton("Continue to login");
-    		JButton retryButton = new JButton("retry");
-    		String passwordInput1 = password1Text.getText();
-    		String passwordInput2 = password2Text.getText();
-    		String usernameInput = userNameText.getText();
-    		String emailInput = emailText.getText();
-    		boolean isDuplicate;
-    		Users duplicateCheck = new Users();
+    		main.createUser(username, password, email, sq);
+
+    		main.removeAll();
+    		main.repaint();
+    		main.revalidate();
+    		main.add(new JLabel("Account has been successfully created"));
     		
-    		isDuplicate = duplicateCheck.checkDuplicateUser(usernameInput);
-    		if (passwordInput1.compareTo(passwordInput2) != 0) {
-    			//checks that passwords match
-    			isFailed = true;
-        		main.removeAll();
-        		main.repaint();
-        		main.revalidate();
-        		main.add(new JLabel("Passwords do not match"));
-        		main.add(retryButton);
-        		BackButtonListener submitButtonListener  = new BackButtonListener();
-        		retryButton.addActionListener(submitButtonListener);
-        		
-    		} else if (usernameInput.isEmpty()) {
-    			//checks for empty username
-    			isFailed = true;
-        		main.removeAll();
-        		main.repaint();
-        		main.revalidate();
-        		main.add(new JLabel("Username is empty"));
-        		main.add(retryButton);
-        		BackButtonListener submitButtonListener  = new BackButtonListener();
-        		retryButton.addActionListener(submitButtonListener);
-    			
-    		} else if (isDuplicate) {
-    			//if username is taken
-    			isFailed = true;
-        		main.removeAll();
-        		main.repaint();
-        		main.revalidate();
-        		main.add(new JLabel("Username is taken"));
-        		main.add(retryButton);
-        		BackButtonListener submitButtonListener  = new BackButtonListener();
-        		retryButton.addActionListener(submitButtonListener);
-    			
-    		} else if (!emailInput.contains("@")) {
-    			//checks for valid email
-    			isFailed = true;
-        		main.removeAll();
-        		main.repaint();
-        		main.revalidate();
-        		main.add(new JLabel("Invalid Email"));
-        		main.add(retryButton);
-        		BackButtonListener submitButtonListener  = new BackButtonListener();
-        		retryButton.addActionListener(submitButtonListener);
-    			
-    		} else {
-			isFailed = false;
-
-			String username = usernameInput;
-			String password = passwordInput1;
-			String email = emailInput;
-
-			main.createUser(username, password, email);
-
-			main.removeAll();
-			main.repaint();
-			main.revalidate();
-			main.add(new JLabel("Account has been successfully created"));
-
-			main.add(continueButton);
-			BackButtonListener submitButtonListener  = new BackButtonListener();
-			continueButton.addActionListener(submitButtonListener);
-    		}
+    		main.add(continueButton);
     		
+    		BackButtonListener submitButtonListener  = new BackButtonListener();
+    		continueButton.addActionListener(submitButtonListener);
     	}
     }
-    
-    /**
-     * This class deals with the action when the back button is clicked.
-     * 
-     * @author Team 7
-     *
-     */
-    private class BackButtonListener implements ActionListener
-    {
+    private class BackButtonListener implements ActionListener{
     	
-    	/* (non-Javadoc)
-    	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-    	 */
-    	public void actionPerformed(ActionEvent e) 
-    	{
+    	public void actionPerformed(ActionEvent e) {
     		main.sendEvent("home");
     	}
     }
