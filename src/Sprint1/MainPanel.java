@@ -92,7 +92,6 @@ public class MainPanel extends JPanel
 	{
 			if(event.equalsIgnoreCase("login"))
 			{
-				System.out.println("LOGIN SHOUULD SHOW");
 				this.removeAll();
 				this.repaint();
 				this.revalidate();
