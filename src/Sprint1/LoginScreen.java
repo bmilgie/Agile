@@ -53,11 +53,11 @@ public class LoginScreen {
          {
            if(username.getText().equals("a") && password.getText().equals("b")) {
             mainPanel.removeAll();
-		loginFailed = false;
+//		loginFailed = false;
            	mainPanel.add(new JLabel("logged in"));
            }else {
             	JOptionPane.showMessageDialog(frame, "Sorry, try again.");
-		loginFailed = true;
+//		loginFailed = true;
            }
 
          }
