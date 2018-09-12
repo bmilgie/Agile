@@ -3,19 +3,24 @@ package Sprint1.test;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import org.junit.*;
-import Sprint1.MainPanel;
-import Sprint1.Login;
+import Sprint1.*;
+
 
 public class testLogin {
 	private MainPanel mainPanel;
 	@SuppressWarnings("unused")
 	private Login loginPanel;
+	private Profile profile;
+	private Register register;
 	
 	@Before
 	public void setUp()
 	{
 		mainPanel = new MainPanel();
+		register = new Register(mainPanel);
 		loginPanel = new Login(mainPanel);
+		profile = new Profile(mainPanel);
+		mainPanel.constructPanels(loginPanel, null, register, profile);
 	}
 	
 	@After
@@ -40,12 +45,24 @@ public class testLogin {
 	}
 	
 	@Test
-	public void loginUserName()
+	public void loginUserNamePass()
 	{
-		loginPanel.username.setText("John");
-		loginPanel.password.setText("John");
+		loginPanel.username.setText("oscaravila2");
+		loginPanel.password.setText("Test123");
 		loginPanel.submit.doClick();
+
 		
 	}
+	
+//     @Test
+//    public void loginUserNameFail()
+//    {
+//    	 setUp();
+//    	loginPanel.errorLabel.setText("");
+//    	loginPanel.username.setText("b");
+//    	loginPanel.password.setText("b");
+//    	mainPanel.repaint();
+//    	loginPanel.submit.doClick();
+//    }
 
 }

@@ -27,15 +27,15 @@ import javax.swing.JPasswordField;
  */
 public class Login extends JPanel 
 {
-	private static JTextField username = new JTextField();
-    private static JTextField password = new JPasswordField();
+	public static JTextField username = new JTextField();
+    public static JTextField password = new JPasswordField();
     private static JPanel thisPanel = new JPanel();
-    private static JButton submit = new JButton("Login");
+    public static JButton submit = new JButton("Login");
     private static JButton register = new JButton("Register");
     private static JButton reset = new JButton("Reset Password");
 	private static JLabel passwordLabel = new JLabel("Password");
 	private static JLabel usernameLabel = new JLabel("Username");
-	private static JLabel errorLabel = new JLabel("");
+	public static JLabel errorLabel = new JLabel("");
     private static JLabel headerLabel = new JLabel("Login");
     private static MainPanel main;
     

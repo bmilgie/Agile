@@ -37,11 +37,11 @@ public class MainPanel extends JPanel
 	 */
 	public void constructPanels(Login loginPanel, ResetPassword resetPanel, Register registerPanel, Profile profilePanel) 
 	{
-		this.loginPanel = loginPanel;
-		this.resetPanel = resetPanel;
-		this.registerPanel = registerPanel;
-		this.profilePanel = profilePanel;
-		this.users = new Users();
+		MainPanel.loginPanel = loginPanel;
+		MainPanel.resetPanel = resetPanel;
+		MainPanel.registerPanel = registerPanel;
+		MainPanel.profilePanel = profilePanel;
+		MainPanel.users = new Users();
 		
 		
 	}
@@ -55,7 +55,7 @@ public class MainPanel extends JPanel
 	 */
 	public void createUser(String username,String password,String email) 
 	{
-		this.users.createUser(username, password, email);
+		MainPanel.users.createUser(username, password, email);
 	}
 	
 	/**
@@ -67,7 +67,7 @@ public class MainPanel extends JPanel
 	 */
 	public boolean validateCredentials(String user, String pass) 
 	{
-		return this.users.validateCredentials(user, pass);
+		return MainPanel.users.validateCredentials(user, pass);
 	}
 	
 	/**
