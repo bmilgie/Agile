@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class MainPanel extends JPanel 
 {
 
-	private static Login loginPanel;
+	public static Login loginPanel;
 	private static Register registerPanel;
 	private static ResetPassword resetPanel;
 	private static Profile profilePanel;
@@ -92,6 +92,7 @@ public class MainPanel extends JPanel
 	{
 			if(event.equalsIgnoreCase("login"))
 			{
+				System.out.println("LOGIN SHOUULD SHOW");
 				this.removeAll();
 				this.repaint();
 				this.revalidate();

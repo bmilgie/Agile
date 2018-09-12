@@ -163,11 +163,13 @@ public class Login extends JPanel
     	
     	public void actionPerformed(ActionEvent e) 
     	{
+    		System.out.println("LOGIN CLICKED");
     		String userName = username.getText();
     		String passWord = password.getText();
 
     		if(main.validateCredentials(userName, passWord)) 
     		{
+    			System.out.println("LOGINPASSED");
     			main.sendEvent("login");
     		}
     		

@@ -125,7 +125,7 @@ public class Register extends JPanel
     		isDuplicate = duplicateCheck.checkDuplicateUser(usernameInput);
     		if (passwordInput1.compareTo(passwordInput2) != 0) {
     			//checks that passwords match
-    			isFailed = true;
+//    			isFailed = true;
         		main.removeAll();
         		main.repaint();
         		main.revalidate();
@@ -136,7 +136,7 @@ public class Register extends JPanel
         		
     		} else if (usernameInput.isEmpty()) {
     			//checks for empty username
-    			isFailed = true;
+//    			isFailed = true;
         		main.removeAll();
         		main.repaint();
         		main.revalidate();
@@ -147,7 +147,7 @@ public class Register extends JPanel
     			
     		} else if (isDuplicate) {
     			//if username is taken
-    			isFailed = true;
+//    			isFailed = true;
         		main.removeAll();
         		main.repaint();
         		main.revalidate();
@@ -158,7 +158,7 @@ public class Register extends JPanel
     			
     		} else if (!emailInput.contains("@")) {
     			//checks for valid email
-    			isFailed = true;
+//    			isFailed = true;
         		main.removeAll();
         		main.repaint();
         		main.revalidate();
@@ -168,7 +168,7 @@ public class Register extends JPanel
         		retryButton.addActionListener(submitButtonListener);
     			
     		} else {
-			isFailed = false;
+//			isFailed = false;
 
 			String username = usernameInput;
 			String password = passwordInput1;
