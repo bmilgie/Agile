@@ -30,7 +30,6 @@ public class Profile extends JPanel
 		this.logoutButton.addActionListener(new LogoutListener());
 		this.add(new JLabel("Profile panel"));
 		this.add(this.logoutButton);
-		
 	}
 	
 	/**
@@ -41,8 +40,7 @@ public class Profile extends JPanel
 	 *
 	 */
 	private class LogoutListener implements ActionListener
-	   {
-	    	
+	   {	
 	    	public void actionPerformed(ActionEvent e) 
 	    	{
 	    		main.sendEvent("logout");

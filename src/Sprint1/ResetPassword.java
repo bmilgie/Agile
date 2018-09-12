@@ -4,16 +4,20 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
-public class ResetPassword extends JPanel{
-
+/**
+ * This class creates all of the logic behind the reset password panel
+ * 
+ * @author Team 7
+ *
+ */
+public class ResetPassword extends JPanel
+{
 	
 	private static MainPanel main;
 	private static JButton backButton = new JButton("Back");
@@ -21,31 +25,32 @@ public class ResetPassword extends JPanel{
 	private static JTextField emailText = new JTextField();
 	private static JTextField sqText = new JTextField();
 	private static JButton submitButton = new JButton("Reset Password");
-	
-	
 	private static JLabel userNameLabel = new JLabel("User Name");
 	private static JLabel emailLabel = new JLabel("Email Address");
 	private static JLabel sqLabel = new JLabel("Animal's name");
 	private static JLabel headerLabel = new JLabel("Enter your Username or Email");
 	private static JLabel passwordLabel = new JLabel("");
 
-	public ResetPassword(MainPanel mainPanel) {
+	/**
+	 * This is a constructor for the reset password panel
+	 * 
+	 * @param mainPanel
+	 */
+	public ResetPassword(MainPanel mainPanel) 
+	{
 		this.main = mainPanel;
 		this.add(headerLabel);
 		this.headerLabel.setPreferredSize(new Dimension(700,40));
 		this.headerLabel.setFont(new Font("Serif", Font.BOLD, 25));
 
-		
 		BoxLayout box = new BoxLayout(this, BoxLayout.Y_AXIS);
 		this.setLayout(box);
-		
-		
+				
 		JPanel emailRow = new JPanel();
 		emailRow.add(emailLabel);
 		emailRow.add(emailText);
 		this.add(emailRow);
-
-		
+	
 		JPanel userNameRow = new JPanel();
 		userNameRow.add(userNameLabel);
 		userNameRow.add(userNameText);
@@ -55,8 +60,7 @@ public class ResetPassword extends JPanel{
 		sqNameRow.add(sqLabel);
 		sqNameRow.add(sqText);
 		this.add(sqNameRow);
-		
-		
+				
 		JPanel buttonRow = new JPanel();
 		buttonRow.add(submitButton);
 		buttonRow.add(backButton);
@@ -69,7 +73,6 @@ public class ResetPassword extends JPanel{
 		this.userNameText.setPreferredSize(new Dimension(150,25));
 		this.emailText.setPreferredSize(new Dimension(150,25));
 		this.sqText.setPreferredSize(new Dimension(150,25));
-		
 		this.sqLabel.setPreferredSize(new Dimension(150,25));
 		this.userNameLabel.setPreferredSize(new Dimension(150,25));
 		this.emailLabel.setPreferredSize(new Dimension(150,25));
@@ -82,8 +85,20 @@ public class ResetPassword extends JPanel{
 	}
 	
 	
-    private class SubmitButtonListener implements ActionListener{
-    	public void actionPerformed(ActionEvent e) {
+    /**
+     * This class deals with the reset button's logic when the user needs a new password.
+     * 
+     * @author Team 7
+     *
+     */
+    private class SubmitButtonListener implements ActionListener
+    {
+    	
+    	/* (non-Javadoc)
+    	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+    	 */
+    	public void actionPerformed(ActionEvent e) 
+    	{
     		String username = userNameText.getText();
     		String email = emailText.getText();
     		String sq = sqText.getText();
@@ -92,9 +107,18 @@ public class ResetPassword extends JPanel{
 
     	}
     }
-    private class BackButtonListener implements ActionListener{
+    
+    /**
+     * This class deals with the action when the back button is clicked.
+     * 
+     * @author Team 7
+     *
+     */
+    private class BackButtonListener implements ActionListener
+    {
     	
-    	public void actionPerformed(ActionEvent e) {
+    	public void actionPerformed(ActionEvent e) 
+    	{
     		main.sendEvent("home");
     	}
     }

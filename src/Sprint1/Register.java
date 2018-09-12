@@ -4,15 +4,20 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
-public class Register extends JPanel {
+/**
+ * This class holds the data structure of the user information.
+ * 
+ * @author Team 7
+ *
+ */
+public class Register extends JPanel 
+{
 	
 	private static MainPanel main;
 	private static JButton backButton = new JButton("Back");
@@ -22,8 +27,6 @@ public class Register extends JPanel {
 	private static JTextField sqText = new JTextField();
 	private static JTextField emailText = new JTextField();
 	private static JButton submitButton = new JButton("Create Account");
-	
-	
 	private static JLabel userNameLabel = new JLabel("User Name");
 	private static JLabel password1Label = new JLabel("Password");
 	private static JLabel password2Label = new JLabel("Confirm Password");
@@ -32,7 +35,13 @@ public class Register extends JPanel {
 	private static JLabel headerLabel = new JLabel("Create An Account");
 	
 
-	public Register(MainPanel mainPanel) {
+	/**
+	 * This method creates all of the aspects of the register panel.
+	 * 
+	 * @param mainPanel
+	 */
+	public Register(MainPanel mainPanel) 
+	{
 		this.main = mainPanel;
 		this.add(headerLabel);
 		this.headerLabel.setPreferredSize(new Dimension(700,40));
@@ -80,7 +89,6 @@ public class Register extends JPanel {
 		this.password2Text.setPreferredSize(new Dimension(150,25));
 		this.emailText.setPreferredSize(new Dimension(150,25));
 		this.sqText.setPreferredSize(new Dimension(150,25));
-		
 		this.userNameLabel.setPreferredSize(new Dimension(150,25));
 		this.password1Label.setPreferredSize(new Dimension(150,25));
 		this.password2Label.setPreferredSize(new Dimension(150,25));
@@ -98,29 +106,52 @@ public class Register extends JPanel {
 		
 	}
 	
-    private class SubmitButtonListener implements ActionListener{
-    	public void actionPerformed(ActionEvent e) {
+    /**
+     * This class deals with the register button's logic when the user wants to submit 
+     * their username, password, and email to be able to create an account.
+     * 
+     * @author Team 7
+     *
+     */
+    private class SubmitButtonListener implements ActionListener
+    {
+    	/* (non-Javadoc)
+    	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+    	 */
+    	public void actionPerformed(ActionEvent e) 
+    	{
     		String username = userNameText.getText();
     		String password = password1Text.getText();
     		String email = emailText.getText();
     		String sq = sqText.getText();
     		JButton continueButton = new JButton("Continue to login");
+    		
     		main.createUser(username, password, email, sq);
-
     		main.removeAll();
     		main.repaint();
     		main.revalidate();
     		main.add(new JLabel("Account has been successfully created"));
-    		
     		main.add(continueButton);
     		
     		BackButtonListener submitButtonListener  = new BackButtonListener();
     		continueButton.addActionListener(submitButtonListener);
     	}
     }
-    private class BackButtonListener implements ActionListener{
+    
+    /**
+     * This class deals with the action when the back button is clicked.
+     * 
+     * @author Team 7
+     *
+     */
+    private class BackButtonListener implements ActionListener
+    {
     	
-    	public void actionPerformed(ActionEvent e) {
+    	/* (non-Javadoc)
+    	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+    	 */
+    	public void actionPerformed(ActionEvent e) 
+    	{
     		main.sendEvent("home");
     	}
     }

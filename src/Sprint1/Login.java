@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -47,52 +46,52 @@ public class Login extends JPanel
      */
     public Login(MainPanel mainPanel) 
     {
-        this.main = mainPanel;
-	this.add(headerLabel);
-	this.headerLabel.setPreferredSize(new Dimension(700,40));
-	this.headerLabel.setFont(new Font("Serif", Font.BOLD, 25));
-
-	BoxLayout box = new BoxLayout(this, BoxLayout.Y_AXIS);
-	this.setLayout(box);
-
-	username.setPreferredSize(new Dimension(150,25));
-	password.setPreferredSize(new Dimension(150, 25));
-
-	JPanel usernameRow = new JPanel();
-	usernameRow.add(usernameLabel);
-	usernameRow.add(username);
-	this.add(usernameRow);
-
-
-	JPanel passwordRow = new JPanel();
-	passwordRow.add(passwordLabel);
-	passwordRow.add(password);
-	this.add(passwordRow);
-
-	JPanel errorRow = new JPanel();
-	errorRow.add(errorLabel);
-	this.errorLabel.setFont(new Font("Serif", Font.BOLD, 14));
-	this.errorLabel.setForeground(Color.RED);
-	this.add(errorRow);
-
-	JPanel buttonRow = new JPanel();
-	buttonRow.add(submit);
-	buttonRow.add(register);
-	buttonRow.add(reset);
-	this.add(buttonRow);
-
-
-	ClearErrorListener clearErrorListener  = new ClearErrorListener();
-	SubmitListener submitListener  = new SubmitListener();
-        ResetListener resetListener  = new ResetListener();
-        RegisterListener registerListener  = new RegisterListener();
-        errorLabel.addMouseMotionListener(clearErrorListener);
-        submit.addActionListener(submitListener);
-        reset.addActionListener(resetListener);
-        register.addActionListener(registerListener);
-        
-   
-        this.add(thisPanel);
+	    this.main = mainPanel;
+		this.add(headerLabel);
+		this.headerLabel.setPreferredSize(new Dimension(700,40));
+		this.headerLabel.setFont(new Font("Serif", Font.BOLD, 25));
+	
+		BoxLayout box = new BoxLayout(this, BoxLayout.Y_AXIS);
+		this.setLayout(box);
+	
+		username.setPreferredSize(new Dimension(150,25));
+		password.setPreferredSize(new Dimension(150, 25));
+	
+		JPanel usernameRow = new JPanel();
+		usernameRow.add(usernameLabel);
+		usernameRow.add(username);
+		this.add(usernameRow);
+	
+	
+		JPanel passwordRow = new JPanel();
+		passwordRow.add(passwordLabel);
+		passwordRow.add(password);
+		this.add(passwordRow);
+	
+		JPanel errorRow = new JPanel();
+		errorRow.add(errorLabel);
+		this.errorLabel.setFont(new Font("Serif", Font.BOLD, 14));
+		this.errorLabel.setForeground(Color.RED);
+		this.add(errorRow);
+	
+		JPanel buttonRow = new JPanel();
+		buttonRow.add(submit);
+		buttonRow.add(register);
+		buttonRow.add(reset);
+		this.add(buttonRow);
+	
+	
+		ClearErrorListener clearErrorListener  = new ClearErrorListener();
+		SubmitListener submitListener  = new SubmitListener();
+	        ResetListener resetListener  = new ResetListener();
+	        RegisterListener registerListener  = new RegisterListener();
+	        errorLabel.addMouseMotionListener(clearErrorListener);
+	        submit.addActionListener(submitListener);
+	        reset.addActionListener(resetListener);
+	        register.addActionListener(registerListener);
+	        
+	   
+	        this.add(thisPanel);	
     }
     
     /**
@@ -139,12 +138,14 @@ public class Login extends JPanel
     	
 
 		@Override
-		public void mouseDragged(MouseEvent arg0) {
+		public void mouseDragged(MouseEvent arg0) 
+		{
 			
 		}
 
 		@Override
-		public void mouseMoved(MouseEvent arg0) {
+		public void mouseMoved(MouseEvent arg0) 
+		{
 			errorLabel.setText("");
 			
 		}
