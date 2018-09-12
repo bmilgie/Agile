@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
 /**
- * This class holds the data structure of the user information.
+ * This class holds the logic for the registration.
  * 
  * @author Team 7 
  *
@@ -111,28 +111,81 @@ public class Register extends JPanel
      * @author Team 7
      *
      */
-    private class SubmitButtonListener implements ActionListener
-    {
-    	/* (non-Javadoc)
-    	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-    	 */
-    	public void actionPerformed(ActionEvent e) 
-    	{
-    		String username = userNameText.getText();
-    		String password = password1Text.getText();
-    		String email = emailText.getText();
+    private class SubmitButtonListener implements ActionListener{
+    	public void actionPerformed(ActionEvent e) {
     		JButton continueButton = new JButton("Continue to login");
-    		main.createUser(username, password, email);
+    		JButton retryButton = new JButton("retry");
+    		String passwordInput1 = password1Text.getText();
+    		String passwordInput2 = password2Text.getText();
+    		String usernameInput = userNameText.getText();
+    		String emailInput = emailText.getText();
+    		boolean isDuplicate;
+    		Users duplicateCheck = new Users();
+    		
+    		isDuplicate = duplicateCheck.checkDuplicateUser(usernameInput);
+    		if (passwordInput1.compareTo(passwordInput2) != 0) {
+    			//checks that passwords match
+    			isFailed = true;
+        		main.removeAll();
+        		main.repaint();
+        		main.revalidate();
+        		main.add(new JLabel("Passwords do not match"));
+        		main.add(retryButton);
+        		BackButtonListener submitButtonListener  = new BackButtonListener();
+        		retryButton.addActionListener(submitButtonListener);
+        		
+    		} else if (usernameInput.isEmpty()) {
+    			//checks for empty username
+    			isFailed = true;
+        		main.removeAll();
+        		main.repaint();
+        		main.revalidate();
+        		main.add(new JLabel("Username is empty"));
+        		main.add(retryButton);
+        		BackButtonListener submitButtonListener  = new BackButtonListener();
+        		retryButton.addActionListener(submitButtonListener);
+    			
+    		} else if (isDuplicate) {
+    			//if username is taken
+    			isFailed = true;
+        		main.removeAll();
+        		main.repaint();
+        		main.revalidate();
+        		main.add(new JLabel("Username is taken"));
+        		main.add(retryButton);
+        		BackButtonListener submitButtonListener  = new BackButtonListener();
+        		retryButton.addActionListener(submitButtonListener);
+    			
+    		} else if (!emailInput.contains("@")) {
+    			//checks for valid email
+    			isFailed = true;
+        		main.removeAll();
+        		main.repaint();
+        		main.revalidate();
+        		main.add(new JLabel("Invalid Email"));
+        		main.add(retryButton);
+        		BackButtonListener submitButtonListener  = new BackButtonListener();
+        		retryButton.addActionListener(submitButtonListener);
+    			
+    		} else {
+			isFailed = false;
 
-    		main.removeAll();
-    		main.repaint();
-    		main.revalidate();
-    		main.add(new JLabel("Account has been successfully created"));
+			String username = usernameInput;
+			String password = passwordInput1;
+			String email = emailInput;
+
+			main.createUser(username, password, email);
+
+			main.removeAll();
+			main.repaint();
+			main.revalidate();
+			main.add(new JLabel("Account has been successfully created"));
+
+			main.add(continueButton);
+			BackButtonListener submitButtonListener  = new BackButtonListener();
+			continueButton.addActionListener(submitButtonListener);
+    		}
     		
-    		main.add(continueButton);
-    		
-    		BackButtonListener submitButtonListener  = new BackButtonListener();
-    		continueButton.addActionListener(submitButtonListener);
     	}
     }
     
