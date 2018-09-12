@@ -22,6 +22,7 @@ public class LoginScreen {
    private static JLabel usernameLabel = new JLabel();
    private static JLabel passwordLabel = new JLabel();
    private static JPanel mainPanel = new JPanel();
+   public boolean loginFailed;
    
    /**
     * Create the GUI and show it.  For thread safety,
@@ -52,10 +53,11 @@ public class LoginScreen {
          {
            if(username.getText().equals("a") && password.getText().equals("b")) {
             mainPanel.removeAll();
+		loginFailed = false;
            	mainPanel.add(new JLabel("logged in"));
            }else {
-            JOptionPane.showMessageDialog(frame, "Sorry, try again.");
-
+            	JOptionPane.showMessageDialog(frame, "Sorry, try again.");
+		loginFailed = true;
            }
 
          }
