@@ -16,7 +16,7 @@ public class Driver
     /**
      * This method creates and shows the GUI.
      */
-    private static void createAndShowGUI() 
+    public static void createAndShowGUI() 
     {
         MainPanel mainPanel = new MainPanel();
     	JFrame frame = new JFrame("Team7 Project");

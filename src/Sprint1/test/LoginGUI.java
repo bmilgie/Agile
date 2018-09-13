@@ -10,6 +10,7 @@ public class LoginGUI {
 	private Login loginPanel;
 	private Profile profile;
 	private Register register;
+	private Driver driver;
 	
 	@Before
 	public void setUp()
@@ -19,6 +20,7 @@ public class LoginGUI {
 		loginPanel = new Login(mainPanel);
 		profile = new Profile(mainPanel);
 		mainPanel.constructPanels(loginPanel, null, register, profile);
+		driver = new Driver();
 	}
 	
 	@After
@@ -30,10 +32,7 @@ public class LoginGUI {
 	@Test
 	public void loginGui()
 	{
-		JFrame frame = new JFrame();
-		frame.getContentPane().add(loginPanel);
-		frame.setSize(new Dimension(800,800));
-		frame.setVisible(true);
+		driver.createAndShowGUI();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
