@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package Sprint1.test;
+=======
+package Tests;
+>>>>>>> cc7292a489ff7a22816af3dd12a844794cba37a4
 
 import java.awt.Dimension;
 
@@ -6,7 +10,11 @@ import javax.swing.JFrame;
 
 import org.junit.*;
 
+<<<<<<< HEAD
 import Sprint1.*;
+=======
+import Login.*;
+>>>>>>> cc7292a489ff7a22816af3dd12a844794cba37a4
 
 public class ResetPasswordWithEmailPass {
 	private MainPanel mainPanel;
