@@ -4,19 +4,12 @@ import Sprint1.*;
 import org.junit.*;
 
 public class LoginFail {
-	private MainPanel mainPanel;
-	private Register register;
-	private Login loginPanel;
-	private Profile profile;
+
 	
 	@Before
 	public void setUp()
 	{
-		mainPanel = new MainPanel();
-		register = new Register(mainPanel);
-		loginPanel = new Login(mainPanel);
-		profile = new Profile(mainPanel);
-		mainPanel.constructPanels(loginPanel, null, register, profile);
+
 	}
 	
 	@After

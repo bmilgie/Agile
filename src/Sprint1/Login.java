@@ -30,8 +30,8 @@ public class Login extends JPanel
     public static JTextField password = new JPasswordField();
     private static JPanel thisPanel = new JPanel();
     public static JButton submit = new JButton("Login");
-    private static JButton register = new JButton("Register");
-    private static JButton reset = new JButton("Reset Password");
+    public static JButton register = new JButton("Register");
+    public static JButton reset = new JButton("Reset Password");
 	private static JLabel passwordLabel = new JLabel("Password");
 	private static JLabel usernameLabel = new JLabel("Username");
 	public static JLabel errorLabel = new JLabel("");

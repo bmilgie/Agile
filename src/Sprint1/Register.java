@@ -21,12 +21,12 @@ public class Register extends JPanel
 	
 	private static MainPanel main;
 	private static JButton backButton = new JButton("Back");
-	private static JTextField userNameText = new JTextField();
-	private static JTextField password1Text = new JTextField();
-	private static JTextField password2Text = new JTextField();
-	private static JTextField sqText = new JTextField();
-	private static JTextField emailText = new JTextField();
-	private static JButton submitButton = new JButton("Create Account");
+	public static JTextField userNameText = new JTextField();
+	public static JTextField password1Text = new JTextField();
+	public static JTextField password2Text = new JTextField();
+	public static JTextField sqText = new JTextField();
+	public static JTextField emailText = new JTextField();
+	public static JButton submitButton = new JButton("Create Account");
 	private static JLabel userNameLabel = new JLabel("User Name");
 	private static JLabel password1Label = new JLabel("Password");
 	private static JLabel password2Label = new JLabel("Confirm Password");
