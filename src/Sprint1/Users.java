@@ -1,4 +1,4 @@
-package Sprint1;
+	package Sprint1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -172,4 +172,15 @@ public class Users
 		}
 		return false;
 	}
+	
+	public boolean checkDuplicateUser(String user) {
+		for(int i=0; i < this.allUsers.size(); i++) {
+			User u = this.allUsers.get(i);
+			if(u.getUserName().equalsIgnoreCase(user)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }
