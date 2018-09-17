@@ -1,23 +1,14 @@
-package Sprint1;
+package login;
 
 import java.awt.Dimension;
 import java.awt.event.*;
+
 import javax.swing.*;        
 
-/**
- * This class creates the frame where the user can login, register or reset password
- * 
- * @author Team 7 
- *
- */
-public class Driver 
-{
+
+public class Driver {
     
-    /**
-     * This method creates and shows the GUI.
-     */
-    public static void createAndShowGUI() 
-    {
+    public static void createAndShowGUI() {
         MainPanel mainPanel = new MainPanel();
     	JFrame frame = new JFrame("Team7 Project");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,26 +18,18 @@ public class Driver
         Login loginPanel = new Login(mainPanel);
         Register registerPanel = new Register(mainPanel);
         ResetPassword resetPanel = new ResetPassword(mainPanel);
-        Profile profilePanel = new Profile(mainPanel);        
-        mainPanel.constructPanels(loginPanel, resetPanel, registerPanel, profilePanel);
+        Profile profilePanel = new Profile(mainPanel); 
+        ForgotUsername usernamePanel = new ForgotUsername(mainPanel);
+        EditPanel editPanel = new EditPanel(mainPanel);
+        mainPanel.constructPanels(loginPanel, resetPanel, registerPanel, profilePanel, usernamePanel, editPanel);
         mainPanel.add(loginPanel);
         frame.pack();
         frame.setVisible(true);
     }
 
-    /**
-     * This method runs the GUI
-     * 
-     * @param args
-     */
-    public static void main(String[] args) 
-    {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() 
-        {
-            public void run() 
-            {
+    public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
                 createAndShowGUI();
             }
         });
