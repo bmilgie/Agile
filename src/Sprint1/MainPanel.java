@@ -15,6 +15,7 @@ public class MainPanel extends JPanel {
 	private static ResetPassword resetPanel;
 	private static Profile profilePanel;
 	private static Users users;
+	private static ForgotUsername userNamePanel;
 	
 	
 	/**
@@ -32,8 +33,9 @@ public class MainPanel extends JPanel {
 	 * @param resetPanel
 	 * @param registerPanel
 	 * @param profilePanel
+	 * @param userNamePanel
 	 */
-	public void constructPanels(Login loginPanel, ResetPassword resetPanel, Register registerPanel, Profile profilePanel) 
+	public void constructPanels(Login loginPanel, ResetPassword resetPanel, Register registerPanel, Profile profilePanel, ForgotUsername usernamePanel) 
 	{
 		this.loginPanel = loginPanel;
 		this.resetPanel = resetPanel;
@@ -79,6 +81,18 @@ public class MainPanel extends JPanel {
 	{
 		String newPassword = this.users.resetPassword(username, email, sq);
 		return newPassword;
+	}
+	
+	 /**
+	 * This method returns the username if it is forgotten.
+	 * 
+	 * @param email
+	 * @param sq
+	 * @returns username 
+	 */
+	public String forgotUsername(String email, String sq){
+		String newUsername = MainPanel.users.forgotUsername(email, sq);
+		return newUsername;
 	}
 	
 	/**
@@ -127,6 +141,13 @@ public class MainPanel extends JPanel {
 				this.repaint();
 				this.revalidate();
 				this.add(loginPanel);
+			}
+			
+			else if(event.equalsIgnoreCase("forgot")) {
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				this.add(userNamePanel);
 			}
 	}
 }
