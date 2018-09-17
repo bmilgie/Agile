@@ -32,6 +32,7 @@ public class Login extends JPanel
     public static JButton submit = new JButton("Login");
     public static JButton register = new JButton("Register");
     public static JButton reset = new JButton("Reset Password");
+    private static JButton forgot = new JButton("Forgot Username");
 	private static JLabel passwordLabel = new JLabel("Password");
 	private static JLabel usernameLabel = new JLabel("Username");
 	public static JLabel errorLabel = new JLabel("");
@@ -85,13 +86,30 @@ public class Login extends JPanel
 		SubmitListener submitListener  = new SubmitListener();
 	        ResetListener resetListener  = new ResetListener();
 	        RegisterListener registerListener  = new RegisterListener();
+		ForgotListener forgotListener = new ForgotListener();
 	        errorLabel.addMouseMotionListener(clearErrorListener);
 	        submit.addActionListener(submitListener);
 	        reset.addActionListener(resetListener);
 	        register.addActionListener(registerListener);
+		forgot.addActionListener(forgotListener);
 	        
 	   
 	        this.add(thisPanel);	
+    }
+    
+     /**
+     * This action listener class is used when the forgot username button is clicked 
+     * and changes to the forgot username window.
+     * 
+     * @author Team 7
+     *
+     */
+    private class ForgotListener implements ActionListener
+    {
+    	public void actionPerformed(ActionEvent e)
+	{
+    		main.sendEvent("forgot");
+    	}
     }
     
     /**
