@@ -79,4 +79,13 @@ public class User
 	{
 		return this.sQ;
 	}
+	
+	/**
+	* This method sets the value of the security question
+	*
+	* @param newSecurityQuestion
+	*/
+	public void setSq(String newSecurityQuestion) {
+		this.sQ = newSecurityQuestion;
+	}
 }
