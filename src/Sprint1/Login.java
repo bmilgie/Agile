@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class Login extends JPanel {
 	public static JTextField username = new JTextField();
-    public static JTextField password = new JTextField();
+    public static JTextField password = new JPasswordField();
     private static JPanel thisPanel = new JPanel();
     public static JButton submit = new JButton("Login");
     private static JButton register = new JButton("Register");
