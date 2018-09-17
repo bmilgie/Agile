@@ -147,7 +147,6 @@ public class Users
 		
 		catch (FileNotFoundException | UnsupportedEncodingException e) 
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -173,6 +172,12 @@ public class Users
 		return false;
 	}
 	
+	/**
+	 * This method checks if the user has given a valid username and password
+	 * 
+	 * @param user
+	 * @returns a boolean value based on whether a username is already in the system or not
+	 */
 	public boolean checkDuplicateUser(String user) {
 		for(int i=0; i < this.allUsers.size(); i++) {
 			User u = this.allUsers.get(i);
@@ -181,6 +186,86 @@ public class Users
 			}
 		}
 		return false;
+	}
+	
+		public boolean checkExistingEmail(String email) {
+		for(int i=0; i < this.allUsers.size(); i++) {
+			User u = this.allUsers.get(i);
+			if(u.getEmail().equalsIgnoreCase(email)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	 /**
+	 * This method returns the username based on their email
+	 * 
+	 * @param email
+	 * @returns the user's username.
+	 */
+	public String getUserName(String email) {
+		String userNameReturn = null;
+		for(int i=0; i < this.allUsers.size(); i++) {
+			User u = this.allUsers.get(i);
+			if(u.getEmail().equalsIgnoreCase(email)) {
+				userNameReturn = u.getUserName();
+			} else {
+				userNameReturn = "error: User not in system";
+			}
+		}
+		return userNameReturn;
+	}
+	
+	 /**
+	 * This method checks if the security questions match
+	 * 
+	 * @param user
+	 * @param securityQuestion
+	 * @returns a boolean value based on if the security questions match
+	 */
+	public boolean securityQuestionCheck(String email, String securityQuestion) {
+		boolean isCorrect = false;
+		String storedSecurityQuestion = null;
+		
+		for(int i=0; i < this.allUsers.size(); i++) {
+			User u = this.allUsers.get(i);
+			if(u.getEmail().equalsIgnoreCase(email)) {
+				storedSecurityQuestion = u.getSq();
+			}
+		}
+		
+		if (securityQuestion.equalsIgnoreCase(storedSecurityQuestion)) {
+			isCorrect = true;
+		} else {
+			isCorrect = false;
+		}
+		
+		return isCorrect;
+	}
+	
+	 /**
+	 * This method returns the username given that the proper email and security response are given
+	 * 
+	 * @param email
+	 * @param sq
+	 * @returns the username
+	 */
+	public String forgotUsername(String email, String sq) {
+		String usernameReturn = "";
+		//checks to see if email is in system first
+		if(checkExistingEmail(email)) {
+			//then checks if security question is correct
+			if (securityQuestionCheck(email, sq)) {
+				//returns the actual username
+				usernameReturn = getUserName(email);
+			} else {
+				usernameReturn = "error: Wrong security question answer";
+			}
+		} else {
+			usernameReturn = "error: Email not in system";
+		}
+		return usernameReturn;
 	}
 	
 }
