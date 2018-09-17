@@ -12,12 +12,16 @@ public class MainPanel extends JPanel {
 	private static Profile profilePanel;
 	private static Users users;
 	private static ForgotUsername userNamePanel;
+<<<<<<< HEAD
 	private static EditPanel editPanel;
+=======
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 	
 	
 	public MainPanel() {	
 	}
 	
+<<<<<<< HEAD
 	public void constructPanels(Login loginPanel, ResetPassword resetPanel, Register registerPanel, Profile profilePanel, ForgotUsername usernamePanel, EditPanel editPanel) {
 		MainPanel.loginPanel = loginPanel;
 		MainPanel.resetPanel = resetPanel;
@@ -26,6 +30,24 @@ public class MainPanel extends JPanel {
 		MainPanel.users = new Users();
 		MainPanel.userNamePanel = usernamePanel;
 		MainPanel.editPanel = editPanel;
+=======
+	/**
+	 * This method constructs the connection between all of the panels.
+	 * 
+	 * @param loginPanel
+	 * @param resetPanel
+	 * @param registerPanel
+	 * @param profilePanel
+	 * @param userNamePanel
+	 */
+	public void constructPanels(Login loginPanel, ResetPassword resetPanel, Register registerPanel, Profile profilePanel, ForgotUsername usernamePanel) 
+	{
+		this.loginPanel = loginPanel;
+		this.resetPanel = resetPanel;
+		this.registerPanel = registerPanel;
+		this.profilePanel = profilePanel;
+		this.users = new Users();
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 	}
 	public void createUser(String username,String password,String email, String sq) {
 		MainPanel.users.createUser(username, password, email, sq);
@@ -54,6 +76,7 @@ public class MainPanel extends JPanel {
 		this.users.setCurrentUser(userName);
 	}
 	
+<<<<<<< HEAD
 	public void sendEvent(String event) {
 			if(event.equalsIgnoreCase("login")){
 			this.removeAll();
@@ -111,5 +134,73 @@ public class MainPanel extends JPanel {
 			this.revalidate();
 			this.add(profilePanel);
 		}
+=======
+	 /**
+	 * This method returns the username if it is forgotten.
+	 * 
+	 * @param email
+	 * @param sq
+	 * @returns username 
+	 */
+	public String forgotUsername(String email, String sq){
+		String newUsername = MainPanel.users.forgotUsername(email, sq);
+		return newUsername;
+	}
+	
+	/**
+	 * This method resets the frame when certain buttons are clicked
+	 * 
+	 * @param event
+	 */
+	public void sendEvent(String event) 
+	{
+			if(event.equalsIgnoreCase("login"))
+			{
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				this.add(profilePanel);
+			}
+			
+			else if(event.equalsIgnoreCase("logout")) 
+			{
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				//log user out
+				this.add(loginPanel);
+			}
+		
+			else if(event.equalsIgnoreCase("reset")) 
+			{
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				this.add(resetPanel);
+			}
+			
+			else if(event.equalsIgnoreCase("register")) 
+			{
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				this.add(registerPanel);
+			}
+			
+			else if(event.equalsIgnoreCase("home"))
+			{
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				this.add(loginPanel);
+			}
+			
+			else if(event.equalsIgnoreCase("forgot")) {
+				this.removeAll();
+				this.repaint();
+				this.revalidate();
+				this.add(userNamePanel);
+			}
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 	}
 }

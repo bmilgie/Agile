@@ -119,6 +119,7 @@ public class Users {
 			e.printStackTrace();
 		}
 		
+<<<<<<< HEAD
 		
 		
 
@@ -130,6 +131,10 @@ public class Users {
 			System.out.println(result);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+=======
+		catch (FileNotFoundException | UnsupportedEncodingException e) 
+		{
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 			e.printStackTrace();
 		}
 
@@ -180,6 +185,28 @@ public class Users {
 		return false;
 	}
 	
+<<<<<<< HEAD
+		public boolean checkExistingEmail(String email) {
+=======
+	/**
+	 * This method checks if the user has given a valid username and password
+	 * 
+	 * @param user
+	 * @returns a boolean value based on whether a username is already in the system or not
+	 */
+	public boolean checkDuplicateUser(String user) {
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
+		for(int i=0; i < this.allUsers.size(); i++) {
+			User u = this.allUsers.get(i);
+			if(u.getEmail().equalsIgnoreCase(email)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+<<<<<<< HEAD
+=======
 		public boolean checkExistingEmail(String email) {
 		for(int i=0; i < this.allUsers.size(); i++) {
 			User u = this.allUsers.get(i);
@@ -190,6 +217,7 @@ public class Users {
 		return false;
 	}
 	
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 	 /**
 	 * This method returns the username based on their email
 	 * 
@@ -243,7 +271,11 @@ public class Users {
 	 * @param sq
 	 * @returns the username
 	 */
+<<<<<<< HEAD
 	public String forgotUsername(String email, String sq, String password) {
+=======
+	public String forgotUsername(String email, String sq) {
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 		String usernameReturn = "";
 		//checks to see if email is in system first
 		if(checkExistingEmail(email)) {
@@ -260,5 +292,8 @@ public class Users {
 		return usernameReturn;
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
 }
