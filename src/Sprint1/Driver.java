@@ -27,8 +27,9 @@ public class Driver
         Login loginPanel = new Login(mainPanel);
         Register registerPanel = new Register(mainPanel);
         ResetPassword resetPanel = new ResetPassword(mainPanel);
-        Profile profilePanel = new Profile(mainPanel);        
-        mainPanel.constructPanels(loginPanel, resetPanel, registerPanel, profilePanel);
+        Profile profilePanel = new Profile(mainPanel);
+        ForgotUsername usernamePanel = new ForgotUsername(mainPanel);
+        mainPanel.constructPanels(loginPanel, resetPanel, registerPanel, profilePanel, usernamePanel);
         mainPanel.add(loginPanel);
         frame.pack();
         frame.setVisible(true);
