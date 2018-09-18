@@ -14,12 +14,12 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class EditPanel extends JPanel{
 	private MainPanel main;
-	private JButton backButton = new JButton("Back");
-	private JTextField usernameText = new JTextField();
-	private JTextField passwordText = new JTextField();
-	private JTextField emailText = new JTextField();
-	private JTextField sqText = new JTextField();
-	private JButton submitButton = new JButton("Submit");
+	public static JButton backButton = new JButton("Back");
+	public static JTextField usernameText = new JTextField();
+	public static JTextField passwordText = new JTextField();
+	public static JTextField emailText = new JTextField();
+	public static JTextField sqText = new JTextField();
+	public static JButton submitButton = new JButton("Submit");
 	
 	private JLabel usernameLabel = new JLabel("User Name");
 	private JLabel emailLabel = new JLabel("Email Address");

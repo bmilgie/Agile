@@ -16,7 +16,7 @@ public class Profile extends JPanel{
 
 	private MainPanel main;
 	private JButton logoutButton = new JButton("Logout");
-	private JButton editButton = new JButton("Edit");
+	public static JButton editButton = new JButton("Edit");
 
 	private JLabel usernameLabel = new JLabel("User Name");
 	private JLabel emailLabel = new JLabel("Email");

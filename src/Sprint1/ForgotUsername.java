@@ -14,11 +14,11 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class ForgotUsername extends JPanel{
 	private static MainPanel main;
-	private static JButton backButton = new JButton("Back");
-	private static JTextField passwordText = new JTextField();
-	private static JTextField emailText = new JTextField();
-	private static JTextField sqText = new JTextField();
-	private static JButton submitButton = new JButton("Submit");
+	public static JButton backButton = new JButton("Back");
+	public static JTextField passwordText = new JTextField();
+	public static JTextField emailText = new JTextField();
+	public static JTextField sqText = new JTextField();
+	public static JButton submitButton = new JButton("Submit");
 	
 	
 	private static JLabel usernameLabel = new JLabel("");
