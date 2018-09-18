@@ -1,4 +1,4 @@
-package login;
+package Sprint1;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -9,19 +9,20 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
 public class Register extends JPanel {
 
 	private static MainPanel main;
-	private static JButton backButton = new JButton("Back");
-	private static JTextField userNameText = new JTextField();
-	private static JTextField password1Text = new JPasswordField();
-	private static JTextField password2Text = new JPasswordField();
-	private static JTextField sqText = new JTextField();
-	private static JTextField emailText = new JTextField();
-	private static JButton submitButton = new JButton("Create Account");
+	public static JButton backButton = new JButton("Back");
+	public static JTextField userNameText = new JTextField();
+	public static JTextField password1Text = new JPasswordField();
+	public static JTextField password2Text = new JPasswordField();
+	public static JTextField sqText = new JTextField();
+	public static JTextField emailText = new JTextField();
+	public static JButton submitButton = new JButton("Create Account");
 
 
 	private static JLabel userNameLabel = new JLabel("User Name");

@@ -24,7 +24,7 @@ public class ResetPasswordGUI {
 		profile = new Profile(mainPanel);
 		resetPanel = new ResetPassword(mainPanel);
 		
-		mainPanel.constructPanels(loginPanel, resetPanel, register, profile);
+		mainPanel.constructPanels(loginPanel, resetPanel, register, profile, null, null);
 		driver = new Driver();
 	}
 	

@@ -1,4 +1,4 @@
-package login;
+package Sprint1;
 
 public class User {
 	
@@ -33,15 +33,9 @@ public class User {
 	public String getSq() {
 		return this.sQ;
 	}
-<<<<<<< HEAD
-
 	public void setEmail(String newEmail) {
 		this.email = newEmail;
 	}
-	public void setSq(String newSq) {
-		this.sQ = newSq;
-=======
-	
 	/**
 	* This method sets the value of the security question
 	*
@@ -49,6 +43,6 @@ public class User {
 	*/
 	public void setSq(String newSecurityQuestion) {
 		this.sQ = newSecurityQuestion;
->>>>>>> 4c5df7468c3bc9e80445100c8e10f633907cbd17
+
 	}
 }

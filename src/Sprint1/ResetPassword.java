@@ -1,4 +1,4 @@
-package login;
+package Sprint1;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -17,18 +17,18 @@ public class ResetPassword extends JPanel{
 
 	
 	private static MainPanel main;
-	private static JButton backButton = new JButton("Back");
-	private static JTextField userNameText = new JTextField();
-	private static JTextField emailText = new JTextField();
-	private static JTextField sqText = new JTextField();
-	private static JButton submitButton = new JButton("Reset Password");
+	public static JButton backButton = new JButton("Back");
+	public static JTextField userNameText = new JTextField();
+	public static JTextField emailText = new JTextField();
+	public static JTextField sqText = new JTextField();
+	public static JButton submitButton = new JButton("Reset Password");
 	
 	
 	private static JLabel userNameLabel = new JLabel("User Name");
 	private static JLabel emailLabel = new JLabel("Email Address");
 	private static JLabel sqLabel = new JLabel("Animal's name");
 	private static JLabel headerLabel = new JLabel("Enter your Username or Email");
-	private static JLabel passwordLabel = new JLabel("");
+	public static JLabel passwordLabel = new JLabel("");
 
 	public ResetPassword(MainPanel mainPanel) {
 		ResetPassword.main = mainPanel;
