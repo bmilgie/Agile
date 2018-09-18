@@ -44,7 +44,7 @@ public class EditPanel extends JPanel{
 		usernameRow.add(usernameText);
 		this.add(usernameRow);
 		
-		JPanel emailRow = new JPanel();
+ 		JPanel emailRow = new JPanel();
 		emailRow.add(emailLabel);
 		emailRow.add(emailText);
 		this.add(emailRow);

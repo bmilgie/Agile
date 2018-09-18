@@ -50,6 +50,7 @@ public class ForgotUsernameTest {
 		ForgotUsername.passwordText.setText("Test123");
 		ForgotUsername.sqText.setText("Dog");
 		ForgotUsername.submitButton.doClick();
+		
 		waitTimer();
 	}
 	
